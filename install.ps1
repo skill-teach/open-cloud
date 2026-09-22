@@ -1,19 +1,27 @@
-Write-Host "⚙️ ટેલિગ્રામ ઓટો-અપલોડ પ્રોજેક્ટ સેટઅપ..." -ForegroundColor Cyan
+Write-Host "Telegram Auto-Upload Project Setup..." -ForegroundColor Cyan
 
-# ૧. ફોલ્ડર બનાવવું
+# 1. Folder બનાવવું
 $watchFolder = "C:\AutoUpload"
+
 if (!(Test-Path $watchFolder)) {
     New-Item -ItemType Directory -Path $watchFolder | Out-Null
 }
 
-# ૨. ડિપેન્ડન્સી ઇન્સ્ટોલ કરવી
-Write-Host "📦 પાયથોન મોડ્યુલ્સ ઇન્સ્ટોલ થઈ રહ્યા છે..." -ForegroundColor Yellow
-pip install watchdog requests --quiet
+# 2. Python modules install કરવી
+Write-Host "Python modules install થઈ રહ્યા છે..." -ForegroundColor Yellow
 
-# ૩. સ્ક્રિપ્ટ ડાઉનલોડ કરવી (લિંક હવે પૂરી અને સાચી છે)
+python -m pip install watchdog requests
+
+# 3. Script download કરવી
+Write-Host "upload_watcher.py download થઈ રહી છે..." -ForegroundColor Yellow
+
 $scriptPath = "$watchFolder\upload_watcher.py"
-$url = "https://githubusercontent.com"
+
+$url = "https://raw.githubusercontent.com/skill-teach/open-cloud/main/upload_watcher.py"
+
 Invoke-WebRequest -Uri $url -OutFile $scriptPath
 
-Write-Host "🚀 પ્રોજેક્ટ સક્સેસફુલી રન થઈ રહ્યો છે..." -ForegroundColor Green
+# 4. Script run કરવી
+Write-Host "Project successfully start થઈ રહ્યો છે..." -ForegroundColor Green
+
 python $scriptPath
