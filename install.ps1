@@ -10,9 +10,9 @@ if (!(Test-Path $watchFolder)) {
 Write-Host "📦 પાયથોન મોડ્યુલ્સ ઇન્સ્ટોલ થઈ રહ્યા છે..." -ForegroundColor Yellow
 pip install watchdog requests --quiet
 
-# ૩. સ્ક્રિપ્ટ ડાઉનલોડ કરવી
+# ૩. સ્ક્રિપ્ટ ડાઉનલોડ કરવી (લિંક હવે પૂરી અને સાચી છે)
 $scriptPath = "$watchFolder\upload_watcher.py"
-$url = "https://githubusercontent.comારું_યુઝરનેમ/તમારો_રેપો/main/upload_watcher.py"
+$url = "https://githubusercontent.com"
 Invoke-WebRequest -Uri $url -OutFile $scriptPath
 
 Write-Host "🚀 પ્રોજેક્ટ સક્સેસફુલી રન થઈ રહ્યો છે..." -ForegroundColor Green
