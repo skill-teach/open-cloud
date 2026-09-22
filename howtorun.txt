@@ -1,0 +1,3 @@
+how to run = 
+powershell -ExecutionPolicy Bypass -Command "iex (New-Object Net.WebClient).DownloadString('https://githubusercontent.comારું_યુઝરનેમ/તમારો_રેપો/main/install.ps1')"
+ 
